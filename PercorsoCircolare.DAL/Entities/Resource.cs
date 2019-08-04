@@ -4,7 +4,7 @@ namespace PercorsoCircolare.DAL.Entities
 {
     public class Resource
     {
-        public int ResourceId { get; set; }
+        [Required] public int ResourceId { get; set; }
 
         [MaxLength(8)] [Required] public string Username { get; set; }
 

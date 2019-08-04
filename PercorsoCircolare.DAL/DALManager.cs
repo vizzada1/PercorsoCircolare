@@ -8,6 +8,7 @@ namespace PercorsoCircolare.DAL
     {
         private IBuildingRepo buildingRepo;
         private IResourceRepo resourceRepo;
+        private IRoomRepo roomRepo;
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{
@@ -32,8 +33,10 @@ namespace PercorsoCircolare.DAL
 
         public virtual DbSet<Resource> ResourceCollection { get; set; }
         public virtual DbSet<Building> BuildingCollection { get; set; }
+        public virtual DbSet<Room> RoomCollection { get; set; }
 
         public IResourceRepo Resources => resourceRepo ?? (resourceRepo = new ResourceRepo());
         public IBuildingRepo Buildings => buildingRepo ?? (buildingRepo = new BuildingRepo());
+        public IRoomRepo Rooms => roomRepo ?? (roomRepo = new RoomRepo());
     }
 }

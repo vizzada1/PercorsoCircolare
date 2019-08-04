@@ -3,16 +3,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PercorsoCircolare.DAL.Entities
 {
-    public class Building
+    public class Room
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
-        public int BuildingId { get; set; }
+        public int RoomId { get; set; }
 
         [Required] public string Name { get; set; }
-
-        [Required] public string Address { get; set; }
-
+        [Required] public int AvailableSeats { get; set; }
         [Required] public bool IsActive { get; set; }
+        [Required] public Building Building { get; set; }
     }
 }
