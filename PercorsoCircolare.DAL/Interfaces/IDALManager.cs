@@ -7,5 +7,6 @@ namespace PercorsoCircolare.DAL.Interfaces
         IResourceRepo Resources { get; }
         IBuildingRepo Buildings { get; }
         IRoomRepo Rooms { get; }
+        IBookingRepo Bookings { get; }
     }
 }
