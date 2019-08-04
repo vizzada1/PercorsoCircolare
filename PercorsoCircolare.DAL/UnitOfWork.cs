@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
+using System.Data.Entity.SqlServer;
+using System.ServiceModel;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace PercorsoCircolare.DAL
 {
@@ -19,21 +17,11 @@ namespace PercorsoCircolare.DAL
         private static readonly string CONTEXTKEY = "UnitOfWorkContext";
         private static readonly Hashtable _threads = new Hashtable();
 
-        public static void Commit()
-        {
-            IUnitOfWork unitOfWork = GetUnitOfWork();
-
-            if (unitOfWork != null)
-            {
-                unitOfWork.Commit();
-            }
-        }
-
         public static IUnitOfWork Current
         {
             get
             {
-                IUnitOfWork unitOfWork = GetUnitOfWork();
+                var unitOfWork = GetUnitOfWork();
 
                 if (unitOfWork == null)
                 {
@@ -45,67 +33,60 @@ namespace PercorsoCircolare.DAL
             }
         }
 
+        public static void Commit()
+        {
+            var unitOfWork = GetUnitOfWork();
+
+            if (unitOfWork != null) unitOfWork.Commit();
+        }
+
         private static IUnitOfWork GetUnitOfWork()
         {
             if (OperationContext.Current != null && OperationContext.Current.RequestContext != null)
             {
                 if (OperationContext.Current.RequestContext.RequestMessage.Properties.ContainsKey(CONTEXTKEY))
-                {
-                    return (IUnitOfWork)OperationContext.Current.RequestContext.RequestMessage.Properties[CONTEXTKEY];
-                }
+                    return (IUnitOfWork) OperationContext.Current.RequestContext.RequestMessage.Properties[CONTEXTKEY];
                 return null;
             }
-            else
+
+            var thread = Thread.CurrentThread;
+            if (string.IsNullOrEmpty(thread.Name))
             {
-                Thread thread = Thread.CurrentThread;
-                if (string.IsNullOrEmpty(thread.Name))
-                {
-                    thread.Name = Guid.NewGuid().ToString();
-                    return null;
-                }
-                else
-                {
-                    lock (_threads.SyncRoot)
-                    {
-                        return (IUnitOfWork)_threads[Thread.CurrentThread.Name];
-                    }
-                }
+                thread.Name = Guid.NewGuid().ToString();
+                return null;
+            }
+
+            lock (_threads.SyncRoot)
+            {
+                return (IUnitOfWork) _threads[Thread.CurrentThread.Name];
             }
         }
 
         private static void SaveUnitOfWork(IUnitOfWork unitOfWork)
         {
             if (OperationContext.Current != null && OperationContext.Current.RequestContext != null)
-            {
                 OperationContext.Current.RequestContext.RequestMessage.Properties.Add(CONTEXTKEY, unitOfWork);
-            }
             else
-            {
                 lock (_threads.SyncRoot)
                 {
                     _threads[Thread.CurrentThread.Name] = unitOfWork;
                 }
-            }
         }
     }
 
     public class EFUnitOfWork : IUnitOfWork, IDisposable
     {
-        public DbContext Context { get; private set; }
         private volatile Type _dependency;
 
         public EFUnitOfWork(DbContext context)
         {
             // Thanks to this (useless) initialization System.Data.SqlClient will be included in published package
-            _dependency = typeof(System.Data.Entity.SqlServer.SqlProviderServices);
+            _dependency = typeof(SqlProviderServices);
             Context = context;
             context.Configuration.LazyLoadingEnabled = true;
         }
 
-        public int Commit()
-        {
-            return Context.SaveChanges();
-        }
+        public DbContext Context { get; private set; }
 
         public void Dispose()
         {
@@ -116,6 +97,11 @@ namespace PercorsoCircolare.DAL
             }
 
             GC.SuppressFinalize(this);
+        }
+
+        public int Commit()
+        {
+            return Context.SaveChanges();
         }
     }
 }
