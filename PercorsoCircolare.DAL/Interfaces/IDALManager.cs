@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PercorsoCircolare.Common
+namespace PercorsoCircolare.DAL.Interfaces
 {
-    public class Class1
+    public interface IDALManager : IDisposable
     {
+        IResourceRepo Resources { get; }
     }
 }
