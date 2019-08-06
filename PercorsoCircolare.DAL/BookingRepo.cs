@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PercorsoCircolare.DAL.Entities;
-using PercorsoCircolare.DAL.Interfaces;
+﻿using PercorsoCircolare.DAL.Entities;
 
 namespace PercorsoCircolare.DAL
 {
-    public class BookingRepo : RepoBase<Booking>, IBookingRepo
+    public class BookingRepo : RepoBase<Booking>
     {
         public Booking GetById(int id)
         {

@@ -2,11 +2,10 @@
 using System.Linq;
 using System.Text;
 using PercorsoCircolare.DAL.Entities;
-using PercorsoCircolare.DAL.Interfaces;
 
 namespace PercorsoCircolare.DAL
 {
-    public class ResourceRepo : RepoBase<Resource>, IResourceRepo
+    public class ResourceRepo : RepoBase<Resource>
     {
         public override void Add(Resource newResource)
         {
@@ -19,16 +18,14 @@ namespace PercorsoCircolare.DAL
                                     + newResource.FirstName.Substring(0, 2))
                 : new StringBuilder(newResource.LastName.Substring(0, newResource.LastName.Length)
                                     + newResource.FirstName.Substring(0, 2));
-            newResource.Username = user.ToString();
             //Aggiungo la risorsa con il progressivo giusto
             for (var i = 1;; i++)
             {
-                var resource = ((DALManager) Context).Resources.GetByUser(user + i.ToString());
+                var comp = user.Append(i).ToString();
+                var resource = ((DALManager) Context).ResourceCollection.FirstOrDefault(r => r.Username == comp);
                 if (resource != null) continue;
-                user.Append(i.ToString());
-                newResource.Username = user.ToString();
+                newResource.Username = comp;
                 ((DALManager) Context).ResourceCollection.Add(newResource);
-                ((DALManager) Context).SaveChanges();
                 return;
             }
         }

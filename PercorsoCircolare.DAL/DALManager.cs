@@ -4,12 +4,12 @@ using PercorsoCircolare.DAL.Interfaces;
 
 namespace PercorsoCircolare.DAL
 {
-    public class DALManager : DbContext, IDALManager
+    public class DALManager : DbContext
     {
-        private IBuildingRepo buildingRepo;
-        private IResourceRepo resourceRepo;
-        private IRoomRepo roomRepo;
-        private IBookingRepo bookingRepo;
+        private IRepository<Resource> resourceRepo;
+        private IRepository<Building> buildingRepo;
+        private IRepository<Room> roomRepo;
+        private IRepository<Booking> bookingRepo;
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -31,9 +31,9 @@ namespace PercorsoCircolare.DAL
         public virtual DbSet<Room> RoomCollection { get; set; }
         public virtual DbSet<Booking> BookingCollection { get; set; }
 
-        public IResourceRepo Resources => resourceRepo ?? (resourceRepo = new ResourceRepo());
-        public IBuildingRepo Buildings => buildingRepo ?? (buildingRepo = new BuildingRepo());
-        public IRoomRepo Rooms => roomRepo ?? (roomRepo = new RoomRepo());
-        public IBookingRepo Bookings => bookingRepo ?? (bookingRepo = new BookingRepo());
+        public IRepository<Resource> Resources => resourceRepo ?? (resourceRepo = new ResourceRepo());
+        public IRepository<Building> Buildings => buildingRepo ?? (buildingRepo = new BuildingRepo());
+        public IRepository<Room> Rooms => roomRepo ?? (roomRepo = new RoomRepo());
+        public IRepository<Booking> Bookings => bookingRepo ?? (bookingRepo = new BookingRepo());
     }
 }

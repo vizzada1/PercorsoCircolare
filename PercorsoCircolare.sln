@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PercorsoCircolare.Common", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PercorsoCircolare.DAL", "PercorsoCircolare.DAL\PercorsoCircolare.DAL.csproj", "{F9F88221-31B6-4D28-8504-00647B564D39}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PercorsoCircolare.BL", "PercorsoCircolare.BL\PercorsoCircolare.BL.csproj", "{181CC3FF-BDC6-41B9-B0B6-464CB1BCA80A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F9F88221-31B6-4D28-8504-00647B564D39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9F88221-31B6-4D28-8504-00647B564D39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9F88221-31B6-4D28-8504-00647B564D39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{181CC3FF-BDC6-41B9-B0B6-464CB1BCA80A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{181CC3FF-BDC6-41B9-B0B6-464CB1BCA80A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{181CC3FF-BDC6-41B9-B0B6-464CB1BCA80A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{181CC3FF-BDC6-41B9-B0B6-464CB1BCA80A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

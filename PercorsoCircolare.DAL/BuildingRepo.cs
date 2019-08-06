@@ -1,9 +1,8 @@
 ﻿using PercorsoCircolare.DAL.Entities;
-using PercorsoCircolare.DAL.Interfaces;
 
 namespace PercorsoCircolare.DAL
 {
-    public class BuildingRepo : RepoBase<Building>, IBuildingRepo
+    public class BuildingRepo : RepoBase<Building>
     {
         public Building GetById(int id)
         {

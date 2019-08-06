@@ -65,11 +65,7 @@
     <Compile Include="Entities\Building.cs" />
     <Compile Include="Entities\Resource.cs" />
     <Compile Include="Entities\Room.cs" />
-    <Compile Include="Interfaces\IBookingRepo.cs" />
-    <Compile Include="Interfaces\IBuildingRepo.cs" />
-    <Compile Include="Interfaces\IDALManager.cs" />
-    <Compile Include="Interfaces\IResourceRepo.cs" />
-    <Compile Include="Interfaces\IRoomRepo.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Migrations\201908041715263_PercorsoCircolare Schema.cs" />
     <Compile Include="Migrations\201908041715263_PercorsoCircolare Schema.Designer.cs">
       <DependentUpon>201908041715263_PercorsoCircolare Schema.cs</DependentUpon>
@@ -79,6 +75,7 @@
     <Compile Include="RepoBase.cs" />
     <Compile Include="ResourceRepo.cs" />
     <Compile Include="RoomRepo.cs" />
+    <Compile Include="Test\DALTest.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +87,7 @@
       <DependentUpon>201908041715263_PercorsoCircolare Schema.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
