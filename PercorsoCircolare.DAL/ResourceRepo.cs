@@ -29,15 +29,5 @@ namespace PercorsoCircolare.DAL
                 return;
             }
         }
-
-        public Resource GetById(int id)
-        {
-            return ((DALManager) Context).ResourceCollection.Find(id);
-        }
-
-        public Resource GetByUser(string username)
-        {
-            return ((DALManager) Context).ResourceCollection.FirstOrDefault(t => t.Username == username);
-        }
     }
 }

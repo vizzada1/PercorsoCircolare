@@ -6,15 +6,15 @@ using PercorsoCircolare.DAL.Entities;
 
 namespace PercorsoCircolare.BL
 {
-    public class BuildingManager
+    public class RoomManager
     {
-        private readonly BuildingRepo repo = new BuildingRepo();
+        private readonly RoomRepo repo = new RoomRepo();
 
         /// <summary>
-        /// Returns a List with all the buildings
+        /// Returns a list of all rooms
         /// </summary>
-        /// <returns>A list of all Building(Entities)</returns>
-        public IEnumerable<Building> GetAllBuildings()
+        /// <returns>A list of all rooms</returns>
+        public IEnumerable<Room> GetAllRooms()
         {
             try
             {
@@ -28,15 +28,15 @@ namespace PercorsoCircolare.BL
         }
 
         /// <summary>
-        /// Returns a Building with a specific id
+        /// Return a Room with a specific id
         /// </summary>
-        /// <param name="id">The building id</param>
-        /// <returns>The building identified</returns>
-        public Building GetBuildingById(int id)
+        /// <param name="id">The room id</param>
+        /// <returns>The room identified</returns>
+        public Room GetRoomById(int id)
         {
             try
             {
-                return repo.Single(r => r.BuildingId == id);
+                return repo.Single(r => r.RoomId == id);
             }
             catch (Exception ex)
             {
@@ -46,14 +46,14 @@ namespace PercorsoCircolare.BL
         }
 
         /// <summary>
-        /// Create a given building on registry
+        /// Create the given room on Registry
         /// </summary>
-        /// <param name="newBuilding">New building to create</param>
-        public void AddNewBuilding(Building newBuilding)
+        /// <param name="newRoom">The new room to create</param>
+        public void AddNewRoom(Room newRoom)
         {
             try
             {
-                repo.Add(newBuilding);
+                repo.Add(newRoom);
                 UnitOfWork.Commit();
             }
             catch (Exception ex)

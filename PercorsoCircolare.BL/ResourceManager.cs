@@ -36,7 +36,7 @@ namespace PercorsoCircolare.BL
         {
             try
             {
-                return repo.GetById(id);
+                return repo.Single(s => s.ResourceId == id);
             }
             catch (Exception ex)
             {
@@ -54,7 +54,7 @@ namespace PercorsoCircolare.BL
         {
             try
             {
-                return repo.GetByUser(username);
+                return repo.Single(r => r.Username == username);
             }
             catch (Exception ex)
             {
@@ -62,6 +62,7 @@ namespace PercorsoCircolare.BL
                 throw;
             }
         }
+
         /// <summary>
         /// Create the given user on Registry
         /// </summary>
@@ -71,6 +72,7 @@ namespace PercorsoCircolare.BL
             try
             {
                 repo.Add(newResource);
+                UnitOfWork.Commit();
             }
             catch (Exception ex)
             {

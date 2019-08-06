@@ -10,34 +10,25 @@ namespace PercorsoCircolare.DAL.Test
     {
         public IEnumerable<Resource> ResourceTest()
         {
-            using (var dm = new DALManager())
-            {
-                var repo = dm.Resources;
-                return repo.GetAll();
-            }
+            var repo = new ResourceRepo();
+            return repo.GetAll();
         }
 
         public void AddResourceTest()
         {
-            using (var dm = new DALManager())
-            {
-                var repo = dm.Resources;
-                var resource = new Resource
-                    { FirstName = "Test", LastName = "Reti", EmailAddress = "test.reti@reti.it", IsActive = true };
-                repo.Add(resource);
-                UnitOfWork.Commit();
-            }
+            var repo = new ResourceRepo();
+            var resource = new Resource
+                {FirstName = "Test", LastName = "Reti", EmailAddress = "test.reti@reti.it", IsActive = true};
+            repo.Add(resource);
+            UnitOfWork.Commit();
         }
 
         public void DeleteResourceTest()
         {
-            using (var dm = new DALManager())
-            {
-                var repo = dm.Resources;
-                var resource = repo.First(r => r.Username == "retite1");
-                repo.Delete(resource);
-                UnitOfWork.Commit();
-            }
+            var repo = new ResourceRepo();
+            var resource = repo.First(r => r.Username == "retite1");
+            repo.Delete(resource);
+            UnitOfWork.Commit();
         }
 
         [TestMethod]

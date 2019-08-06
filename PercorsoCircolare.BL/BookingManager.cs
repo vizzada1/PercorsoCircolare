@@ -6,15 +6,15 @@ using PercorsoCircolare.DAL.Entities;
 
 namespace PercorsoCircolare.BL
 {
-    public class BuildingManager
+    public class BookingManager
     {
-        private readonly BuildingRepo repo = new BuildingRepo();
+        private readonly BookingRepo repo = new BookingRepo();
 
         /// <summary>
-        /// Returns a List with all the buildings
+        /// Returns a list of all bookings
         /// </summary>
-        /// <returns>A list of all Building(Entities)</returns>
-        public IEnumerable<Building> GetAllBuildings()
+        /// <returns>A list of all bookings</returns>
+        public IEnumerable<Booking> GetAllBookings()
         {
             try
             {
@@ -28,15 +28,15 @@ namespace PercorsoCircolare.BL
         }
 
         /// <summary>
-        /// Returns a Building with a specific id
+        /// Returns a Booking with a specific id
         /// </summary>
-        /// <param name="id">The building id</param>
-        /// <returns>The building identified</returns>
-        public Building GetBuildingById(int id)
+        /// <param name="id">The id of the Booking</param>
+        /// <returns>The booking specified</returns>
+        public Booking GetBookingById(int id)
         {
             try
             {
-                return repo.Single(r => r.BuildingId == id);
+                return repo.Single(r => r.BookingId == id);
             }
             catch (Exception ex)
             {
@@ -46,14 +46,14 @@ namespace PercorsoCircolare.BL
         }
 
         /// <summary>
-        /// Create a given building on registry
+        /// Create a given booking on registry
         /// </summary>
-        /// <param name="newBuilding">New building to create</param>
-        public void AddNewBuilding(Building newBuilding)
+        /// <param name="newBooking">The new booking to create</param>
+        public void AddNewBuilding(Booking newBooking)
         {
             try
             {
-                repo.Add(newBuilding);
+                repo.Add(newBooking);
                 UnitOfWork.Commit();
             }
             catch (Exception ex)
