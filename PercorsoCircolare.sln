@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PercorsoCircolare.DAL", "Pe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PercorsoCircolare.BL", "PercorsoCircolare.BL\PercorsoCircolare.BL.csproj", "{181CC3FF-BDC6-41B9-B0B6-464CB1BCA80A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PercorsoCircolare.WebApi", "PercorsoCircolare.WebApi\PercorsoCircolare.WebApi.csproj", "{37701B12-2A4D-4E31-B0F4-7C2DFC16EAF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PercorsoCircolare.WebApi.Tests", "PercorsoCircolare.WebApi.Tests\PercorsoCircolare.WebApi.Tests.csproj", "{DE446AC1-F829-4193-86E9-096CCB17B175}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{181CC3FF-BDC6-41B9-B0B6-464CB1BCA80A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{181CC3FF-BDC6-41B9-B0B6-464CB1BCA80A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{181CC3FF-BDC6-41B9-B0B6-464CB1BCA80A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37701B12-2A4D-4E31-B0F4-7C2DFC16EAF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37701B12-2A4D-4E31-B0F4-7C2DFC16EAF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37701B12-2A4D-4E31-B0F4-7C2DFC16EAF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37701B12-2A4D-4E31-B0F4-7C2DFC16EAF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE446AC1-F829-4193-86E9-096CCB17B175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE446AC1-F829-4193-86E9-096CCB17B175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE446AC1-F829-4193-86E9-096CCB17B175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE446AC1-F829-4193-86E9-096CCB17B175}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
