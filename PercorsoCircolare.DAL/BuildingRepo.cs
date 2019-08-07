@@ -1,4 +1,4 @@
-﻿using PercorsoCircolare.DAL.Entities;
+﻿using PercorsoCircolare.Entities;
 
 namespace PercorsoCircolare.DAL
 {

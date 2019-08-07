@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace PercorsoCircolare.DAL.Entities
+namespace PercorsoCircolare.Entities
 {
     public class Booking
     {

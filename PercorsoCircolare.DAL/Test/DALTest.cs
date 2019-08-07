@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PercorsoCircolare.DAL.Entities;
+using PercorsoCircolare.Entities;
 
 namespace PercorsoCircolare.DAL.Test
 {

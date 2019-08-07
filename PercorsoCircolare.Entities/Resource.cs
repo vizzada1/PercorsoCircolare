@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace PercorsoCircolare.DAL.Entities
+namespace PercorsoCircolare.Entities
 {
     public class Resource
     {

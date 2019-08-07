@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
-using PercorsoCircolare.DAL.Entities;
+using PercorsoCircolare.Entities;
 
 namespace PercorsoCircolare.DAL
 {

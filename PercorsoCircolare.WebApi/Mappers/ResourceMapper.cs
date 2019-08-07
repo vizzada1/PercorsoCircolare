@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using PercorsoCircolare.DAL.Entities;
+using PercorsoCircolare.Entities;
 using PercorsoCircolare.WebApi.Models;
 
 namespace PercorsoCircolare.WebApi.Mappers

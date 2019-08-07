@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using PercorsoCircolare.Common;
 using PercorsoCircolare.DAL;
-using PercorsoCircolare.DAL.Entities;
+using PercorsoCircolare.Entities;
 
 namespace PercorsoCircolare.BL
 {
