@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using PercorsoCircolare.BL;
@@ -18,6 +17,26 @@ namespace PercorsoCircolare.WebApi.Controllers
             var resources = ResourceMapper.MapListOfResource(mng.GetAllResources());
 
             return resources;
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetResource(int id)
+        {
+            var mng = new ResourceManager();
+            var resource = ResourceMapper.MapResource(mng.GetResourceById(id));
+
+            if (resource == null)
+                return NotFound();
+            return Ok(resource);
+        }
+
+        [HttpPost]
+        public IHttpActionResult CreateUser(ResourceVM res)
+        {
+            var mng = new ResourceManager();
+            mng.AddNewResource(ResourceMapper.MapResourceVM(res));
+
+            return Ok(res);
         }
     }
 }
