@@ -7,7 +7,7 @@ using PercorsoCircolare.WebApi.Models;
 
 namespace PercorsoCircolare.WebApi.Controllers
 {
-    [EnableCors(origins: "http://localhost:8088", headers: "*", methods: "*")]
+    [EnableCors("http://localhost:8088", "*", "*")]
     public class BuildingController : ApiController
     {
         [HttpGet]
@@ -31,7 +31,7 @@ namespace PercorsoCircolare.WebApi.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult CreateUser(BuildingVM res)
+        public IHttpActionResult CreateBuilding(BuildingVM res)
         {
             var mng = new BuildingManager();
             mng.AddNewBuilding(BuildingMapper.MapBuildingVM(res));

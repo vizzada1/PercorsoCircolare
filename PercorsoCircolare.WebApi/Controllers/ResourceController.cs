@@ -7,7 +7,7 @@ using PercorsoCircolare.WebApi.Models;
 
 namespace PercorsoCircolare.WebApi.Controllers
 {
-    [EnableCors(origins: "http://localhost:8088", headers: "*", methods: "*")]
+    [EnableCors("http://localhost:8088", "*", "*")]
     public class ResourceController : ApiController
     {
         [HttpGet]
@@ -31,7 +31,7 @@ namespace PercorsoCircolare.WebApi.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult CreateUser(ResourceVM res)
+        public IHttpActionResult CreateResource(ResourceVM res)
         {
             var mng = new ResourceManager();
             mng.AddNewResource(ResourceMapper.MapResourceVM(res));

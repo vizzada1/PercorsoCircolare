@@ -49,11 +49,30 @@ namespace PercorsoCircolare.BL
         /// Create a given booking on registry
         /// </summary>
         /// <param name="newBooking">The new booking to create</param>
-        public void AddNewBuilding(Booking newBooking)
+        public void AddNewBooking(Booking newBooking)
         {
             try
             {
                 repo.Add(newBooking);
+                UnitOfWork.Commit();
+            }
+            catch (Exception ex)
+            {
+                LogManager.Error(ex.Message);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Removes a booking from the registry
+        /// </summary>
+        /// <param name="id">id used to identify the booking to delete</param>
+        public void RemoveBooking(int id)
+        {
+            try
+            {
+                var booking = GetBookingById(id);
+                repo.Delete(booking);
                 UnitOfWork.Commit();
             }
             catch (Exception ex)
