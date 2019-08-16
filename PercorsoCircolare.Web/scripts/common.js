@@ -20,10 +20,10 @@ var ajaxManager = /** @class */ (function () {
         return msg;
     };
     ajaxManager.apiGet = function (url, pars, success, error) {
-        var paramExtended = $.extend({}, pars, {});
+        //const paramExtended = $.extend({}, pars, {  });
         $.ajax({
             url: ajaxManager.webApiBaseUrl + url,
-            data: paramExtended,
+            //data: paramExtended,
             type: "GET",
             dataType: "json",
             traditional: true
@@ -75,6 +75,7 @@ var ajaxManager = /** @class */ (function () {
             always ? always() : "";
         });
     };
+    ajaxManager.webApiBaseUrl = "http://localhost:44304/api/";
     return ajaxManager;
 }());
 //# sourceMappingURL=common.js.map

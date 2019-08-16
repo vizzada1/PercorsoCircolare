@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using PercorsoCircolare.BL;
 using PercorsoCircolare.WebApi.Mappers;
 using PercorsoCircolare.WebApi.Models;
 
 namespace PercorsoCircolare.WebApi.Controllers
 {
+    [EnableCors("http://localhost:44304", "*", "*")]
     public class BookingController : ApiController
     {
         [HttpGet]

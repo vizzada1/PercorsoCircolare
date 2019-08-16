@@ -1,5 +1,5 @@
 ﻿    class ajaxManager {
-        static webApiBaseUrl: string;
+        static webApiBaseUrl = "http://localhost:44304/api/";
         static BaseUrl: string;
 
         static getErrorMessage(r: any): string {
@@ -22,10 +22,10 @@
         }
 
         static apiGet(url: string, pars?: any, success?: Function, error?: Function) {
-            const paramExtended = $.extend({}, pars, {  });
+            //const paramExtended = $.extend({}, pars, {  });
             $.ajax({
                     url: ajaxManager.webApiBaseUrl + url,
-                    data: paramExtended,
+                    //data: paramExtended,
                     type: "GET",
                     dataType: "json",
                     traditional: true

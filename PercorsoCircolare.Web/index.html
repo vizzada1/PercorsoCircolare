@@ -22,7 +22,6 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="#">
                             Home
-                            <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -35,7 +34,7 @@
                         <a class="nav-link" href="#">Sale</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Utenti</a>
+                        <a class="nav-link" href="site/Resources.html" onclick="getAll()">Utenti</a>
                     </li>
                 </ul>
             </div>
@@ -64,10 +63,10 @@
             </div>
             <div class="col-lg-6 mb-4">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="images/risorse.jpg" alt=""></a>
+                    <a href="site/Resources.html" onclick="getAll()"><img class="card-img-top" src="images/risorse.jpg" alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">Utenti</a>
+                            <a href="site/Resources.html" onclick="getAll()">Utenti</a>
                         </h4>
                         <p class="card-text">Pagina per la gestione degli utenti abilitati a prenotare delle sale.</p>
                     </div>
@@ -91,13 +90,18 @@
                         <h4 class="card-title">
                             <a href="#">Edifici</a>
                         </h4>
-                        <p class="card-text">Pagina per la gestione degli edifici disponobili.</p>
+                        <p class="card-text">Pagina per la gestione degli edifici disponibili.</p>
                     </div>
                 </div>
             </div>
         </div>
         <!-- /.row -->
 
-    </div>W
+    </div>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="scripts/classes.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/resources.js"></script>
 </body>
 </html>

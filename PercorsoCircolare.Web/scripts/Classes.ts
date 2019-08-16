@@ -1,6 +1,4 @@
-﻿module classes {
-
-    class User {
+﻿class User {
         resourceId: number;
         username: string;
         firstName: string;
@@ -31,8 +29,3 @@
         dateStart: Date;
         dateEnd: Date;
     }
-
-    function createUser(): void {
-        ajaxManager.apiPost("/Resources", {});
-    }
-}
