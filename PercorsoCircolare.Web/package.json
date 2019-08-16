@@ -11,14 +11,16 @@
     "url": "https://github.com/vizzada1/PercorsoCircolare.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Davide Vizzari",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vizzada1/PercorsoCircolare/issues"
   },
   "homepage": "https://github.com/vizzada1/PercorsoCircolare",
   "dependencies": {
+    "@types/jquery": "^3.3.31",
     "bootstrap": "^4.3.1",
+    "bootswatch": "^4.3.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0"
   }
