@@ -22,12 +22,12 @@
         }
 
         static apiGet(url: string, pars?: any, success?: Function, error?: Function) {
-            //const paramExtended = $.extend({}, pars, {  });
+            const paramExtended = $.extend({}, pars, { login: "" });
             $.ajax({
                     url: ajaxManager.webApiBaseUrl + url,
-                    //data: paramExtended,
+                    data: paramExtended,
                     type: "GET",
-                    dataType: "json",
+                    dataType: "application/json",
                     traditional: true
                 })
                 .done(data => {
@@ -38,6 +38,7 @@
                     console.error(msg);
                 })
                 .always(() => {
+                    console.error("");
                 });
         }
 

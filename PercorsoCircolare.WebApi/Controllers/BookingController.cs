@@ -8,7 +8,7 @@ using PercorsoCircolare.WebApi.Models;
 
 namespace PercorsoCircolare.WebApi.Controllers
 {
-    [EnableCors("http://localhost:44304", "*", "*")]
+    [EnableCors("http://localhost:8088", "*", "*")]
     public class BookingController : ApiController
     {
         [HttpGet]

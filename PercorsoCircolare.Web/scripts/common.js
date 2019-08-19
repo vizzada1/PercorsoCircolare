@@ -20,12 +20,12 @@ var ajaxManager = /** @class */ (function () {
         return msg;
     };
     ajaxManager.apiGet = function (url, pars, success, error) {
-        //const paramExtended = $.extend({}, pars, {  });
+        var paramExtended = $.extend({}, pars, { login: "" });
         $.ajax({
             url: ajaxManager.webApiBaseUrl + url,
-            //data: paramExtended,
+            data: paramExtended,
             type: "GET",
-            dataType: "json",
+            dataType: "application/json",
             traditional: true
         })
             .done(function (data) {
@@ -36,6 +36,7 @@ var ajaxManager = /** @class */ (function () {
             console.error(msg);
         })
             .always(function () {
+            console.error("");
         });
     };
     ajaxManager.apiPost = function (url, pars, success, error) {
