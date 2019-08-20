@@ -19,6 +19,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api
                 "api/{controller}/{id}",
                 new { id = RouteParameter.Optional }
             );
+
         }
     }
 }

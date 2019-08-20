@@ -20,5 +20,15 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Tests
                 Assert.AreEqual(15, contentResult.Content.ResourceId);
             }
         }
+
+        [TestMethod]
+        public void GetAllResources()
+        {
+            using (var controller = new ResourceController())
+            {
+                var result = controller.GetAllResources();
+                Assert.IsNotNull(result);
+            }
+        }
     }
 }

@@ -1,74 +1,60 @@
 ﻿const webApiBaseUrl = "http://localhost:61147/api/";
 //const webApiBaseUrl = "http://localhost:44346/api/";
 
-function formatUser(item: any): string {
-    return item.LastName + " " + item.FirstName + " - " + item.Username;
+function formatUser(item: User): string {
+    return item.lastName + " " + item.firstName + " - " + item.username;
 }
 
 function getAll(): void {
     $("#list-of-users").empty();
-    //ajaxManager.apiGet("Resource", null, (users: any) => {
-    //    $.each(users,
-    //        (_key, item: any) => {
-    //            $("#list-of-users").append(
-    //                `<li class="list-group-item">${formatUser(item)
-    //                }<a style="margin-left:5px;" href="#" onclick="viewUserDetails(${item.ResourceId
-    //                })">(View)</a><a style="margin-left:5px;" href="#" onclick="updateUser(${item.ResourceId
-    //                });">(Update)</a><a style="margin-left:5px;" href="#" onclick="deleteUser(${item.ResourceId});">(Delete)</a></li>`);
-    //        });
-
-    //$.getJSON(webApiBaseUrl + "Resource")
-    //    .done((users: any) => {
-    //        $.each(users,
-    //            (_key, item: any) => {
-    //                $("#list-of-users").append(
-    //                    `<li class="list-group-item">${formatUser(item)
-    //                    }<a style="margin-left:5px;" href="#" onclick="viewUserDetails(${item.ResourceId
-    //                    })">(View)</a><a style="margin-left:5px;" href="#" onclick="updateUser(${item.ResourceId
-    //                    });">(Update)</a><a style="margin-left:5px;" href="#" onclick="deleteUser(${item.ResourceId
-    //                    });">(Delete)</a></li>`);
-    //            });
-    //    })
-    //    .fail(() => {
-    //        alert("Error While Uploading users.");
-    //    });
 
     $.ajax({
         type: "GET",
         url: webApiBaseUrl + "Resource",
-        contentType: "application/x-www-form-urlencoded",
-        dataType: "json",
-        success: data => {
+        contentType: "application/json",
+        dataType: "json"
+    })
+        .done(((data:any) => {
+            alert("dentro");
             console.debug("dentro");
-            $.each(data,
-                (_key, item: any) => {
+            let users: Array<User> = User.mapToUsers(data);
+            $.each(users,
+                (_key, item: User) => {
                     $("#list-of-users").append(
                         `<li class="list-group-item">${formatUser(item)
-                        }<a style="margin-left:5px;" href="#" onclick="viewUserDetails(${item.ResourceId
-                        })">(View)</a><a style="margin-left:5px;" href="#" onclick="updateUser(${item.ResourceId
-                        });">(Update)</a><a style="margin-left:5px;" href="#" onclick="deleteUser(${item.ResourceId
+                        }<a style="margin-left:5px;" href="#" onclick="viewUserDetails(${item.resourceId
+                        })">(View)</a><a style="margin-left:5px;" href="#" onclick="updateUser(${item.resourceId
+                        });">(Update)</a><a style="margin-left:5px;" href="#" onclick="deleteUser(${item.resourceId
                         });">(Delete)</a></li>`);
                 });
-        },
-        error: () => {
+        }) as any)
+        .fail((jqXHR, textStatus, err) => {
+            console.error(`jqXHR: ${jqXHR}`);
+            console.error(`textStatus: ${textStatus}`);
+            console.error(`err: ${err}`);
             alert("Error While Uploading users.");
             console.error("Error While Uploading users.");
-        }
-    });
-    //    .done(data => {
+        });
+
+    //$.getJSON(webApiBaseUrl + "Resource")
+    //    .done(((data: any) => {
     //        alert("dentro");
     //        console.debug("dentro");
-    //        $.each(data,
-    //            (_key, item: any) => {
+    //        let users: Array<User> = User.mapToUsers(data);
+    //        $.each(users,
+    //            (_key, item: User) => {
     //                $("#list-of-users").append(
     //                    `<li class="list-group-item">${formatUser(item)
-    //                    }<a style="margin-left:5px;" href="#" onclick="viewUserDetails(${item.ResourceId
-    //                    })">(View)</a><a style="margin-left:5px;" href="#" onclick="updateUser(${item.ResourceId
-    //                    });">(Update)</a><a style="margin-left:5px;" href="#" onclick="deleteUser(${item.ResourceId
+    //                    }<a style="margin-left:5px;" href="#" onclick="viewUserDetails(${item.resourceId
+    //                    })">(View)</a><a style="margin-left:5px;" href="#" onclick="updateUser(${item.resourceId
+    //                    });">(Update)</a><a style="margin-left:5px;" href="#" onclick="deleteUser(${item.resourceId
     //                    });">(Delete)</a></li>`);
     //            });
-    //    })
-    //    .fail(() => {
+    //    }) as any)
+    //    .fail((jqXHR, textStatus, err) => {
+    //        console.error(`jqXHR: ${jqXHR}`);
+    //        console.error(`textStatus: ${textStatus}`);
+    //        console.error(`err: ${err}`);
     //        alert("Error While Uploading users.");
     //        console.error("Error While Uploading users.");
     //    });

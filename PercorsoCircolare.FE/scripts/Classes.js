@@ -1,6 +1,20 @@
 var User = /** @class */ (function () {
     function User() {
     }
+    User.mapToUsers = function (data) {
+        var users = [];
+        $.each(data, function (item) {
+            var user = new User();
+            user.resourceId = item.ResourceId;
+            user.firstName = item.FirstName;
+            user.lastName = item.LastName;
+            user.username = item.Username;
+            user.emailAddress = item.EmailAddress;
+            user.isActive = item.IsActive;
+            users.push(user);
+        });
+        return users;
+    };
     return User;
 }());
 var Building = /** @class */ (function () {
