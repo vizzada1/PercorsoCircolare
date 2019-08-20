@@ -8,8 +8,8 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-            var cors = new EnableCorsAttribute("http://localhost:60559/", "*", "*");
-            config.EnableCors(cors);
+            //var cors = new EnableCorsAttribute("http://localhost:60559/", "*", "*");
+            config.EnableCors();
 
             // Web API routes
             config.MapHttpAttributeRoutes();

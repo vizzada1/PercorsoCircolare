@@ -1,5 +1,5 @@
-﻿const webApiBaseUrl = "http://localhost:61147/api/";
-//const webApiBaseUrl = "http://localhost:44346/api/";
+﻿//const webApiBaseUrl = "http://localhost:61147/api/";
+const webApiBaseUrl = "http://localhost:44346/api/";
 
 function formatUser(item: User): string {
     return item.lastName + " " + item.firstName + " - " + item.username;
@@ -10,9 +10,11 @@ function getAll(): void {
 
     $.ajax({
         type: "GET",
-        url: webApiBaseUrl + "Resource",
+        url: webApiBaseUrl + "Resource", //?jsoncallback=?
         contentType: "application/json",
-        dataType: "json"
+        //dataType: "json",
+        //dataType: "jsonp",
+        //crossDomain: true
     })
         .done(((data:any) => {
             alert("dentro");

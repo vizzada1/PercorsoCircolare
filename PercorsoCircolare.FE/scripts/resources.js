@@ -1,5 +1,5 @@
-var webApiBaseUrl = "http://localhost:61147/api/";
-//const webApiBaseUrl = "http://localhost:44346/api/";
+//const webApiBaseUrl = "http://localhost:61147/api/";
+var webApiBaseUrl = "http://localhost:44346/api/";
 function formatUser(item) {
     return item.lastName + " " + item.firstName + " - " + item.username;
 }
@@ -9,7 +9,6 @@ function getAll() {
         type: "GET",
         url: webApiBaseUrl + "Resource",
         contentType: "application/json",
-        dataType: "json"
     })
         .done((function (data) {
         alert("dentro");

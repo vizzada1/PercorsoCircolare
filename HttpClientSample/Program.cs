@@ -2,7 +2,6 @@
 using PercorsoCircolare.PercorsoCircolare.SL.Api.Models;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
