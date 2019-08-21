@@ -27,7 +27,7 @@ namespace HttpClientSample
 
         public static async Task Main(string[] args)
         {
-            client.BaseAddress = new Uri("http://localhost:61147/api/");
+            client.BaseAddress = new Uri("http://localhost:44346/api/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
