@@ -1,1 +1,5 @@
-﻿const project = "PercorsoCircolare.RoomBooking"
+﻿const project = "PercorsoCircolare.RoomBooking";
+
+$(document).ready(() => {
+    this.getAll();
+});
