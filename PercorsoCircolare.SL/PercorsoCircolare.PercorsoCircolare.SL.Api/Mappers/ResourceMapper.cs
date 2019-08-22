@@ -29,7 +29,9 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Mappers
                 ResourceId = entity.ResourceId,
                 Username = entity.Username,
                 FirstName = entity.FirstName,
-                LastName = entity.LastName
+                LastName = entity.LastName,
+                IsActive = entity.IsActive,
+                EmailAddress = entity.EmailAddress
             };
 
             return res;

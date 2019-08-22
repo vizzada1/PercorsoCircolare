@@ -4,9 +4,17 @@ function formatUser(item: User): string {
     return item.LastName + " " + item.FirstName + " - " + item.Username;
 }
 
+$(document).ready(() => {
+    this.getAllUsers();
+
+    $("#btnCreate").click(() => {
+        this.createUser();
+    });
+});
+
 function userDetails(id: number): void {
     $.getJSON(webApiBaseUrl + "Resource/" + id)
-        .done(((user: User) => {
+        .done(((user: any) => {
             alert(user.Username + " " + user.FirstName + " " + user.LastName + " " + user.EmailAddress + " " + user.IsActive);
         }) as any)
         .fail((jqXHR, textStatus, err) => {
@@ -17,7 +25,7 @@ function userDetails(id: number): void {
         });
 }
 
-function getAll(): void {
+function getAllUsers(): void {
     $("#list-of-users").empty();
 
     $.getJSON(webApiBaseUrl + "Resource")
@@ -34,4 +42,28 @@ function getAll(): void {
             console.error(`err: ${err}`);
             console.error("Error While Uploading users.");
         });
+}
+
+function createUser(): void {
+    let body = JSON.stringify({
+        "FirstName": $("#firstName").val(),
+        "LastName": $("#lastName").val(),
+        "EmailAddress": $("#emailAddress").val(),
+        "IsActive": $("#isActive").is(":checked")
+    });
+    console.log(body);
+    $.ajax({
+        type: "POST",
+        url: webApiBaseUrl + "Resource",
+        contentType: "application/json",
+        data: body
+    }).done((data) => {
+        console.log(JSON.stringify(data));
+        this.getAllUsers();
+    }).fail((jqXHR, textStatus, err) => {
+        console.error(`jqXHR: ${jqXHR}`);
+        console.error(`textStatus: ${textStatus}`);
+        console.error(`err: ${err}`);
+        console.error("Error While Uploading users.");
+    });
 }

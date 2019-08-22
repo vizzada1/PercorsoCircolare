@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Reti Room Bookings</title>
     <link rel="icon" href="../favicon.ico" />
-    <link href="../node_modules/bootswatch/dist/lumen/bootstrap.min.css" rel="stylesheet" />
+    <link href="../node_modules/bootswatch/dist/simplex/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet"/>
 </head>
 <body>
     <!-- Navigation -->
@@ -54,10 +55,33 @@
         </div>
 
         <hr>
+
+        <!--<button id="createUser" type="button" class="btn btn-default" onclick="redirect('site/AddResource.html')">add user</button>-->
+        <!--Trigger-->
+        <a class="create-trigger" href="#" data-target="#createUser" data-toggle="modal">Create</a>
+
+        <div id="createUser" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+    
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button data-dismiss="modal" class="close">&times;</button>
+                        <h4>Create</h4>
+                        <form>
+                            <input type="text" id="firstName" name="firstName" class="username form-control" placeholder="first name" />
+                            <input type="text" id="lastName" name="lastName" class="username form-control" placeholder="last name" />
+                            <input type="text" id="emailAddress" name="emailAddress" class="username form-control" placeholder="email address" />
+                            <input type="checkbox" id="isActive" name="isActive" value="isActive" checked/>
+                            <hr />
+                            <input class="btn create" id="btnCreate" type="submit" value="Create" />
+                        </form>
+                    </div>
+                </div>
+            </div>  
+        </div>
     </div>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../scripts/Index.js"></script>
     <script src="../scripts/Classes.js"></script>
     <script src="../scripts/resources.js"></script>
 </body>

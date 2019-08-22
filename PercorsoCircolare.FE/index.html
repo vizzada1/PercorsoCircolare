@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Reti Room Bookings</title>
     <link rel="icon" href="favicon.ico" />
-    <link href="node_modules/bootswatch/dist/lumen/bootstrap.min.css" rel="stylesheet" />
+    <link href="node_modules/bootswatch/dist/simplex/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <!-- Navigation -->
@@ -35,7 +35,7 @@
                         <a class="nav-link" href="#">Sale</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="site/Resources.html" onclick="getAll()">Utenti</a>
+                        <a class="nav-link" href="site/Resources.html" onclick="getAllUsers()">Utenti</a>
                     </li>
                 </ul>
             </div>
@@ -64,10 +64,10 @@
             </div>
             <div class="col-lg-6 mb-4">
                 <div class="card h-100">
-                    <a href="site/Resources.html" onclick="getAll()"><img class="card-img-top" src="images/risorse.jpg" alt=""></a>
+                    <a href="site/Resources.html" onclick="getAllUsers()"><img class="card-img-top" src="images/risorse.jpg" alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="site/Resources.html" onclick="getAll()">Utenti</a>
+                            <a href="site/Resources.html" onclick="getAllUsers()">Utenti</a>
                         </h4>
                         <p class="card-text">Pagina per la gestione degli utenti abilitati a prenotare delle sale.</p>
                     </div>
@@ -103,6 +103,5 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="scripts/Index.js"></script>
     <script src="scripts/Classes.js"></script>
-    <script src="scripts/resources.js"></script>
 </body>
 </html>

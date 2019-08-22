@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using PercorsoCircolare.BL;
 using PercorsoCircolare.PercorsoCircolare.SL.Api.Mappers;
 using PercorsoCircolare.PercorsoCircolare.SL.Api.Models;
 
 namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
 {
+    [EnableCors("http://localhost:60559", "*", "*")]
     public class RoomController : ApiController
     {
         [HttpGet]

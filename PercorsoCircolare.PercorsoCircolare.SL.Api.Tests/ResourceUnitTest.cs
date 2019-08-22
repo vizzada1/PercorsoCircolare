@@ -18,6 +18,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Tests
                 Assert.IsNotNull(result);
                 Assert.IsNotNull(contentResult);
                 Assert.AreEqual(15, contentResult.Content.ResourceId);
+                Assert.AreEqual("davide.vizzari@reti.it", contentResult.Content.EmailAddress);
             }
         }
 
