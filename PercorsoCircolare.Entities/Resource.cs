@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PercorsoCircolare.Entities
 {
     public class Resource
     {
-        [Required] public int ResourceId { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)][Required] public int ResourceId { get; set; }
 
         [MaxLength(8)] [Required] public string Username { get; set; }
 

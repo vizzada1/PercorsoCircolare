@@ -11,6 +11,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
     public class ResourceController : ApiController
     {
         [HttpGet]
+        [Route("api/Resource")]
         public IEnumerable<ResourceVM> GetAllResources()
         {
             var mng = new ResourceManager();
@@ -20,7 +21,8 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult GetResource(int id)
+        [Route("api/Resource/{id:int}")]
+        public IHttpActionResult GetResource([FromUri]int id)
         {
             var mng = new ResourceManager();
             var resource = ResourceMapper.MapResource(mng.GetResourceById(id));
@@ -31,7 +33,8 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult CreateResource(ResourceVM res)
+        [Route("api/Resource/add")]
+        public IHttpActionResult CreateResource([FromBody]ResourceVM res)
         {
             var mng = new ResourceManager();
             mng.AddNewResource(ResourceMapper.MapResourceVM(res));

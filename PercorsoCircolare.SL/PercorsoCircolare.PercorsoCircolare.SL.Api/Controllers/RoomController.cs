@@ -11,6 +11,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
     public class RoomController : ApiController
     {
         [HttpGet]
+        [Route("api/Rooms")]
         public IEnumerable<RoomVM> GetAllRooms()
         {
             var mng = new RoomManager();
@@ -20,6 +21,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
         }
 
         [HttpGet]
+        [Route("api/Rooms/{id:int}")]
         public IHttpActionResult GetRoom(int id)
         {
             var mng = new RoomManager();
@@ -31,6 +33,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
         }
 
         [HttpPost]
+        [Route("api/Rooms/add")]
         public IHttpActionResult CreateRoom(RoomVM res)
         {
             var mng = new RoomManager();

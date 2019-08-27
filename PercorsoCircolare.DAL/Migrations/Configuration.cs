@@ -9,7 +9,7 @@ namespace PercorsoCircolare.DAL.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(PercorsoCircolare.DAL.DALManager context)

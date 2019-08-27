@@ -46,6 +46,7 @@ function getAllUsers(): void {
 
 function createUser(): void {
     let body = JSON.stringify({
+        "ResourceId": $("#id").val(),
         "FirstName": $("#firstName").val(),
         "LastName": $("#lastName").val(),
         "EmailAddress": $("#emailAddress").val(),
@@ -54,7 +55,7 @@ function createUser(): void {
     console.log(body);
     $.ajax({
         type: "POST",
-        url: webApiBaseUrl + "Resource",
+        url: webApiBaseUrl + "Resource/add",
         contentType: "application/json",
         data: body
     }).done((data) => {

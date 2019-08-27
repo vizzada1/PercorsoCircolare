@@ -40,6 +40,7 @@ function getAllUsers() {
 function createUser() {
     var _this = this;
     var body = JSON.stringify({
+        "ResourceId": $("#id").val(),
         "FirstName": $("#firstName").val(),
         "LastName": $("#lastName").val(),
         "EmailAddress": $("#emailAddress").val(),
@@ -48,7 +49,7 @@ function createUser() {
     console.log(body);
     $.ajax({
         type: "POST",
-        url: webApiBaseUrl + "Resource",
+        url: webApiBaseUrl + "Resource/add",
         contentType: "application/json",
         data: body
     }).done(function (data) {

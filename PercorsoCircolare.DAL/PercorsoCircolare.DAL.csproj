@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201908041715263_PercorsoCircolare Schema.Designer.cs">
       <DependentUpon>201908041715263_PercorsoCircolare Schema.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908270838139_resourceIdentityDelete.cs" />
+    <Compile Include="Migrations\201908270838139_resourceIdentityDelete.Designer.cs">
+      <DependentUpon>201908270838139_resourceIdentityDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepoBase.cs" />
@@ -80,15 +84,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201908041715263_PercorsoCircolare Schema.resx">
-      <DependentUpon>201908041715263_PercorsoCircolare Schema.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\PercorsoCircolare.Entities\PercorsoCircolare.Entities.csproj">
       <Project>{d5a923c3-f554-4b15-b586-d27d1e37fe40}</Project>
       <Name>PercorsoCircolare.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201908041715263_PercorsoCircolare Schema.resx">
+      <DependentUpon>201908041715263_PercorsoCircolare Schema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908270838139_resourceIdentityDelete.resx">
+      <DependentUpon>201908270838139_resourceIdentityDelete.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

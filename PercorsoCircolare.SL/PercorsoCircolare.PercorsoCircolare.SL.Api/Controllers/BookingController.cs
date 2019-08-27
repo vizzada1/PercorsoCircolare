@@ -12,6 +12,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
     public class BookingController : ApiController
     {
         [HttpGet]
+        [Route("api/Bookings")]
         public IEnumerable<BookingVM> GetAllBookings()
         {
             var mng = new BookingManager();
@@ -21,6 +22,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
         }
 
         [HttpGet]
+        [Route("api/Bookings/{id:int}")]
         public IHttpActionResult GetBooking(int id)
         {
             var mng = new BookingManager();
@@ -32,6 +34,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
         }
 
         [HttpPost]
+        [Route("api/Bookings/add")]
         public IHttpActionResult CreateBooking(BookingVM res)
         {
             var mng = new BookingManager();
@@ -41,6 +44,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
         }
 
         [HttpDelete]
+        [Route("api/Bookings/del/{id:int}")]
         public IHttpActionResult RemoveBooking([FromUri] int id)
         {
             try
