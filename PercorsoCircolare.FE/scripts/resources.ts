@@ -9,6 +9,11 @@ $(document).ready(() => {
 
     $("#btnCreate").click(() => {
         this.createUser();
+        $("#id").val("");
+        $("#firstName").val("");
+        $("#lastName").val("");
+        $("#emailAddress").val("");
+        $("#createUser").modal("toggle");
     });
 });
 

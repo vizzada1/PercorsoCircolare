@@ -7,7 +7,7 @@
     <title>Reti Room Bookings</title>
     <link rel="icon" href="../favicon.ico" />
     <link href="../node_modules/bootswatch/dist/simplex/bootstrap.min.css" rel="stylesheet" />
-    <link href="../css/styles.css" rel="stylesheet"/>
+    <link href="../css/styles.css" rel="stylesheet" />
 </head>
 <body>
     <!-- Navigation -->
@@ -46,10 +46,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Utenti</h2>
-                <p>A list of our Users</p>
-                <ul class="list-group" id="list-of-users" name="list-of-users">
-                    <li class="list-group-item">LastName FirstName - Username</li>
+                <h2>Edifici</h2>
+                <p>A list of our Buildings</p>
+                <ul class="list-group" id="list-of-buildings" name="list-of-buildings">
                 </ul>
             </div>
         </div>
@@ -58,32 +57,30 @@
 
         <!--<button id="createUser" type="button" class="btn btn-default" onclick="redirect('site/AddResource.html')">add user</button>-->
         <!--Trigger-->
-        <a class="create-trigger" href="#" data-target="#createUser" data-toggle="modal">Create</a>
+        <a class="create-trigger" href="#" data-target="#createBuilding" data-toggle="modal">Create</a>
 
-        <div id="createUser" class="modal fade" role="dialog">
+        <div id="createBuilding" class="modal fade" role="dialog">
             <div class="modal-dialog">
-    
+
                 <div class="modal-content">
                     <div class="modal-body">
                         <button data-dismiss="modal" class="close">&times;</button>
                         <h4>Create</h4>
                         <form>
-                            <input type="number" id="id" name="id" class="username form-control" placeholder="id" required/>
-                            <input type="text" id="firstName" name="firstName" class="username form-control" placeholder="first name" required/>
-                            <input type="text" id="lastName" name="lastName" class="username form-control" placeholder="last name" required />
-                            <input type="text" id="emailAddress" name="emailAddress" class="username form-control" placeholder="email address" required />
-                            <input type="checkbox" id="isActive" name="isActive" value="isActive" checked  required/>
+                            <input type="text" id="address" name="address" class="username form-control" placeholder="address" required />
+                            <input type="text" id="buildingName" name="buildingName" class="username form-control" placeholder="name" required />
+                            <input type="checkbox" id="isActive" name="isActive" value="isActive" checked required />
                             <hr />
-                            <input class="btn create" id="btnCreate" type="button" value="Create" />
+                            <input class="btn create" id="btnCreateBuilding" type="button" value="Create" />
                         </form>
                     </div>
                 </div>
-            </div>  
+            </div>
         </div>
     </div>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../scripts/Classes.js"></script>
-    <script src="../scripts/resources.js"></script>
+    <script src="../scripts/buildings.js"></script>
 </body>
 </html>

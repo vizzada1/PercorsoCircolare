@@ -8,24 +8,24 @@
 }
 
 class Building {
-    buildingId: number;
-    name: string;
-    address: string;
-    isActive: boolean;
+    BuildingId: number;
+    Name: string;
+    Address: string;
+    IsActive: boolean;
 }
 
 class Room {
-    roomId: number;
-    name: string;
-    availableSeats: number;
-    isActive: boolean;
-    building: Building;
+    RoomId: number;
+    Name: string;
+    AvailableSeats: number;
+    IsActive: boolean;
+    Building: Building;
 }
 
 class Booking {
-    bookingId: number;
-    resource: User;
-    description: string;
-    dateStart: Date;
-    dateEnd: Date;
+    BookingId: number;
+    Resource: User;
+    Description: string;
+    DateStart: Date;
+    DateEnd: Date;
 }
