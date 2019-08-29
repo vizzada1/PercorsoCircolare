@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using PercorsoCircolare.BL;
@@ -12,7 +13,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
     public class BookingController : ApiController
     {
         [HttpGet]
-        [Route("api/Bookings")]
+        [Route("api/Booking")]
         public IEnumerable<BookingVM> GetAllBookings()
         {
             var mng = new BookingManager();
@@ -22,7 +23,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
         }
 
         [HttpGet]
-        [Route("api/Bookings/{id:int}")]
+        [Route("api/Booking/{id:int}")]
         public IHttpActionResult GetBooking(int id)
         {
             var mng = new BookingManager();
@@ -34,7 +35,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
         }
 
         [HttpPost]
-        [Route("api/Bookings/add")]
+        [Route("api/Booking/add")]
         public IHttpActionResult CreateBooking(BookingVM res)
         {
             var mng = new BookingManager();
@@ -44,7 +45,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
         }
 
         [HttpDelete]
-        [Route("api/Bookings/del/{id:int}")]
+        [Route("api/Booking/del/{id:int}")]
         public IHttpActionResult RemoveBooking([FromUri] int id)
         {
             try
@@ -57,6 +58,16 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
             {
                 return BadRequest(ex.Message);
             }
+        }
+
+        [HttpGet]
+        [Route("api/Booking/range")]
+        public IEnumerable<BookingVM> GetBookingFromDateRange(DateTime start, DateTime end, int roomId)
+        {
+            var mng = new BookingManager();
+            var bookings = BookingMapper.MapListOfBookings(mng.GetBookingInRange(start, end));
+
+            return bookings.Where(b => b.RoomId == roomId);
         }
     }
 }

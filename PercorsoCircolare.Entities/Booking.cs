@@ -14,7 +14,9 @@ namespace PercorsoCircolare.Entities
         [Required] public string Description { get; set; }
         [Required] public DateTime DateStart { get; set; }
         [Required] public DateTime DateEnd { get; set; }
+        [Required] public int RoomId { get; set; }
 
         public virtual Resource Resource { get; set; }
+        public virtual Room Rooms { get; set; }
     }
 }

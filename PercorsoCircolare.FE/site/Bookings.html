@@ -27,13 +27,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/site/Bookings.html">Prenotazioni</a>
+                    <a class="nav-link active" href="/site/Bookings.html">Prenotazioni</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/site/Buildings.html">Edifici</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/site/Rooms.html">Sale</a>
+                    <a class="nav-link" href="/site/Rooms.html">Sale</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/site/Resources.html">Utenti</a>
@@ -46,20 +46,20 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h2>Sale</h2>
-            <p>A list of our Rooms</p>
-            <ul class="list-group" id="list-of-rooms" name="list-of-rooms">
+            <h2>Prenotazioni</h2>
+            <p>Pagina per la prenotazione delle sale</p>
+            <input type="text" id="filterNames" onkeyup="searchFilter()" placeholder="Search for descriptions..." title="Type a description">
+            <ul class="list-group" id="list-of-bookings" name="list-of-bookings">
             </ul>
         </div>
     </div>
 
     <hr>
 
-    <!--<button id="createUser" type="button" class="btn btn-default" onclick="redirect('site/AddResource.html')">add user</button>-->
     <!--Trigger-->
-    <a class="create-trigger" href="#" data-target="#createRoom" data-toggle="modal">Create</a>
+    <a class="create-trigger" href="#" data-target="#createBooking" data-toggle="modal">Create</a>
 
-    <div id="createRoom" class="modal fade" role="dialog">
+    <div id="createBooking" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
             <div class="modal-content">
@@ -67,16 +67,21 @@
                     <button data-dismiss="modal" class="close">&times;</button>
                     <h4>Create</h4>
                     <form>
-                        <input type="text" id="roomName" name="roomName" class="username form-control" placeholder="name" required />
-                        <input type="number" id="availableSeats" name="availableSeats" min="0" class="username form-control" placeholder="seats #" required />
-                        <label id="labelCheckBox" class="username form-control"><input type="checkbox" id="isActive" name="isActive" value="isActive" checked required />è attivo?</label>
+                        <input type="text" id="description" name="description" class="username form-control" placeholder="description" required />
+                        <input type="datetime-local" id="datepickerStart" name="datepickerStart" class="username form-control" required />
+                        <input type="datetime-local" id="datepickerEnd" name="datepickerEnd" class="username form-control" required />
+                        <div class="dropdown dropdown-dark">
+                            <select id="resourceSelect" name="resourceSelect" class="dropdown-select">
+                                <option value="">Select Resource…</option>
+                            </select>
+                        </div>
                         <div class="dropdown dropdown-dark">
                             <select id="roomSelect" name="roomSelect" class="dropdown-select">
-                                <option value="">Select Building…</option>
+                                <option value="">Select Room…</option>
                             </select>
                         </div>
                         <hr />
-                        <input class="btn create" id="btnCreateRoom" type="button" value="Create"/>
+                        <input class="btn create" id="btnCreateBooking" type="button" value="Create" />
                     </form>
                 </div>
             </div>
@@ -86,6 +91,6 @@
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="../scripts/Classes.js"></script>
-<script src="../scripts/rooms.js"></script>
+<script src="../scripts/bookings.js"></script>
 </body>
 </html>

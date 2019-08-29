@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using PercorsoCircolare.Common;
 using PercorsoCircolare.DAL;
 using PercorsoCircolare.Entities;
@@ -74,6 +75,26 @@ namespace PercorsoCircolare.BL
                 var booking = GetBookingById(id);
                 repo.Delete(booking);
                 UnitOfWork.Commit();
+            }
+            catch (Exception ex)
+            {
+                LogManager.Error(ex.Message);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// Check if exists bookings in the range of date given.
+        /// </summary>
+        /// <param name="start">date lower limit</param>
+        /// <param name="end">date upper limit</param>
+        /// <returns>The list of bookings in the range</returns>
+        public IEnumerable<Booking> GetBookingInRange(DateTime start, DateTime end)
+        {
+            try
+            {
+                var filtered = repo.Find(c => (c.DateStart >= start && start <= c.DateEnd) || (c.DateEnd >= end && end <= c.DateEnd)).ToList();
+                return filtered;
             }
             catch (Exception ex)
             {

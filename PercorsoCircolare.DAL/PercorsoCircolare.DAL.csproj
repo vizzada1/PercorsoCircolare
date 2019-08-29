@@ -83,6 +83,10 @@
     <Compile Include="Migrations\201908291205238_relationsChangeBooking1.Designer.cs">
       <DependentUpon>201908291205238_relationsChangeBooking1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908291629499_BookingChange.cs" />
+    <Compile Include="Migrations\201908291629499_BookingChange.Designer.cs">
+      <DependentUpon>201908291629499_BookingChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepoBase.cs" />
@@ -116,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908291205238_relationsChangeBooking1.resx">
       <DependentUpon>201908291205238_relationsChangeBooking1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908291629499_BookingChange.resx">
+      <DependentUpon>201908291629499_BookingChange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

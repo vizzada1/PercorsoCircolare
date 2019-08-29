@@ -296,6 +296,7 @@
     <Content Include="node_modules\popper.js\dist\umd\popper-utils.min.js" />
     <Content Include="node_modules\popper.js\dist\umd\popper.js" />
     <Content Include="node_modules\popper.js\dist\umd\popper.min.js" />
+    <Content Include="site\Bookings.html" />
     <Content Include="site\Buildings.html" />
     <Content Include="site\Resources.html" />
     <Content Include="site\Rooms.html" />
@@ -522,6 +523,7 @@
     <TypeScriptCompile Include="node_modules\popper.js\index.d.ts" />
     <TypeScriptCompile Include="scripts\Classes.ts" />
     <TypeScriptCompile Include="scripts\Index.ts" />
+    <TypeScriptCompile Include="scripts\bookings.ts" />
     <TypeScriptCompile Include="scripts\resources.ts" />
     <TypeScriptCompile Include="scripts\rooms.ts" />
   </ItemGroup>

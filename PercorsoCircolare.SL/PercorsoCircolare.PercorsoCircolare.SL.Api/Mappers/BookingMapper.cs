@@ -15,7 +15,8 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Mappers
                 DateEnd = entity.DateEnd,
                 DateStart = entity.DateStart,
                 Description = entity.Description,
-                ResourceId = entity.ResourceId
+                ResourceId = entity.ResourceId,
+                RoomId = entity.RoomId
             });
 
             return res;
@@ -29,7 +30,8 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Mappers
                 DateEnd = entity.DateEnd,
                 DateStart = entity.DateStart,
                 Description = entity.Description,
-                ResourceId = entity.ResourceId
+                ResourceId = entity.ResourceId,
+                RoomId = entity.RoomId
             };
 
             return res;
@@ -43,7 +45,8 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Mappers
                 DateEnd = vm.DateEnd,
                 DateStart = vm.DateStart,
                 Description = vm.Description,
-                ResourceId = vm.ResourceId
+                ResourceId = vm.ResourceId,
+                RoomId = vm.RoomId
             };
 
             return res;

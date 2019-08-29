@@ -27,7 +27,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Prenotazioni</a>
+                        <a class="nav-link" href="/site/Bookings.html">Prenotazioni</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/site/Buildings.html">Edifici</a>
@@ -68,11 +68,11 @@
                         <button data-dismiss="modal" class="close">&times;</button>
                         <h4>Create</h4>
                         <form>
-                            <input type="number" id="id" name="id" class="username form-control" placeholder="id" required/>
-                            <input type="text" id="firstName" name="firstName" class="username form-control" placeholder="first name" required/>
+                            <input type="number" id="id" name="id" class="username form-control" min="1" placeholder="id" required />
+                            <input type="text" id="firstName" name="firstName" class="username form-control" placeholder="first name" required />
                             <input type="text" id="lastName" name="lastName" class="username form-control" placeholder="last name" required />
                             <input type="text" id="emailAddress" name="emailAddress" class="username form-control" placeholder="email address" required />
-                            <input type="checkbox" id="isActive" name="isActive" value="isActive" checked  required/>
+                            <label id="labelCheckBox" class="username form-control"><input type="checkbox" id="isActive" name="isActive" value="isActive" checked required />è attivo?</label>
                             <hr />
                             <input class="btn create" id="btnCreate" type="button" value="Create" />
                         </form>

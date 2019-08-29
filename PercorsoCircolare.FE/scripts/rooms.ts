@@ -5,9 +5,10 @@ $(document).ready(() => {
 
     $("#btnCreateRoom").click(() => {
         this.createRoom();
-        $("#name").val("");
-        $("#address").val("");
+        $("#roomName").val("");
+        $("#availableSeats").val("");
         $("#createRoom").modal("toggle");
+        $("#roomSelect").prop("selectedIndex", 0);
     });
     populateBuildingDropdown();
 });
@@ -28,7 +29,6 @@ function populateBuildingDropdown(): void {
             console.error(`err: ${err}`);
             console.error("Error While Uploading rooms.");
         });
-    
 }
 
 function formatRoom(item: Room): string {

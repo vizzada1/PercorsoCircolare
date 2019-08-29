@@ -28,4 +28,5 @@ class Booking {
     Description: string;
     DateStart: Date;
     DateEnd: Date;
+    RoomId: number;
 }
