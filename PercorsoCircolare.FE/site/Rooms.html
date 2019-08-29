@@ -70,19 +70,13 @@
                         <input type="text" id="roomName" name="roomName" class="username form-control" placeholder="name" required />
                         <input type="number" id="availableSeats" name="availableSeats" class="username form-control" placeholder="seats #" required />
                         <input type="checkbox" id="isActive" name="isActive" value="isActive" checked required />
-                        <div class="containerSelect">
-                            <div class="dropdown">
-                                <div class="select">
-                                    <span>Select Room</span>
-                                    <i class="fa fa-chevron-left"></i>
-                                </div>
-                                <input type="hidden" name="room">
-                                <ul class="dropdown-menu" id="dropdown-rooms">
-                                </ul>
-                            </div>
+                        <div class="dropdown dropdown-dark">
+                            <select id="roomSelect" name="roomSelect" class="dropdown-select">
+                                <option value="">Select Room…</option>
+                            </select>
                         </div>
                         <hr />
-                        <input class="btn create" id="btnCreate" type="button" value="Create" />
+                        <input class="btn create" id="btnCreateRoom" type="button" value="Create"/>
                     </form>
                 </div>
             </div>

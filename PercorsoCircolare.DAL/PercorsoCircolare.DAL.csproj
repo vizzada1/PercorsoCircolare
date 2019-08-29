@@ -71,6 +71,18 @@
     <Compile Include="Migrations\201908270838139_resourceIdentityDelete.Designer.cs">
       <DependentUpon>201908270838139_resourceIdentityDelete.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908291138327_relationsChange.cs" />
+    <Compile Include="Migrations\201908291138327_relationsChange.Designer.cs">
+      <DependentUpon>201908291138327_relationsChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908291203158_relationsChangeBooking.cs" />
+    <Compile Include="Migrations\201908291203158_relationsChangeBooking.Designer.cs">
+      <DependentUpon>201908291203158_relationsChangeBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908291205238_relationsChangeBooking1.cs" />
+    <Compile Include="Migrations\201908291205238_relationsChangeBooking1.Designer.cs">
+      <DependentUpon>201908291205238_relationsChangeBooking1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepoBase.cs" />
@@ -95,6 +107,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908270838139_resourceIdentityDelete.resx">
       <DependentUpon>201908270838139_resourceIdentityDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908291138327_relationsChange.resx">
+      <DependentUpon>201908291138327_relationsChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908291203158_relationsChangeBooking.resx">
+      <DependentUpon>201908291203158_relationsChangeBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908291205238_relationsChangeBooking1.resx">
+      <DependentUpon>201908291205238_relationsChangeBooking1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

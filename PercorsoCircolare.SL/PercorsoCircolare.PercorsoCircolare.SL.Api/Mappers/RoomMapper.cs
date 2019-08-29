@@ -15,7 +15,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Mappers
                 AvailableSeats = entity.AvailableSeats,
                 Name = entity.Name,
                 IsActive = entity.IsActive,
-                Building = entity.Building.BuildingId
+                BuildingId = entity.BuildingId
             });
 
             return res;
@@ -29,7 +29,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Mappers
                 AvailableSeats = entity.AvailableSeats,
                 Name = entity.Name,
                 IsActive = entity.IsActive,
-                Building = entity.Building.BuildingId
+                BuildingId = entity.BuildingId
             };
 
             return res;
@@ -43,7 +43,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Mappers
                 AvailableSeats = vm.AvailableSeats,
                 Name = vm.Name,
                 IsActive = vm.IsActive,
-                //Building = vm.Building
+                BuildingId = vm.BuildingId
             };
 
             return res;

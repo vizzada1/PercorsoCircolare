@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PercorsoCircolare.Entities
@@ -16,5 +17,7 @@ namespace PercorsoCircolare.Entities
         [Required] public string EmailAddress { get; set; }
 
         [Required] public bool IsActive { get; set; }
+
+        public virtual ICollection<Booking> Bookings { get; set; }
     }
 }

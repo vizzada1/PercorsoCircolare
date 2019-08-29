@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.InteropServices.ComTypes;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using PercorsoCircolare.BL;
@@ -38,10 +37,8 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
         public IHttpActionResult CreateRoom(RoomVM res)
         {
             var mng = new RoomManager();
-            var mngBuilding = new BuildingManager();
 
             var room = RoomMapper.MapRoomVM(res);
-            room.Building = mngBuilding.GetBuildingById(res.Building);
             mng.AddNewRoom(room);
 
             return Ok(res);

@@ -19,12 +19,12 @@ class Room {
     Name: string;
     AvailableSeats: number;
     IsActive: boolean;
-    Building: number;
+    BuildingId: number;
 }
 
 class Booking {
     BookingId: number;
-    Resource: User;
+    ResourceId: number;
     Description: string;
     DateStart: Date;
     DateEnd: Date;

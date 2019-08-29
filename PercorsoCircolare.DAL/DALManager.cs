@@ -7,12 +7,6 @@ namespace PercorsoCircolare.DAL
     {
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Booking>().HasRequired(c => c.Resource)
-                .WithMany()
-                .WillCascadeOnDelete();
-            modelBuilder.Entity<Room>().HasRequired(c => c.Building)
-                .WithMany()
-                .WillCascadeOnDelete();
         }
 
         public DALManager() : base("name=PercorsoCircolareConnectionString")
