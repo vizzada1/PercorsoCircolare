@@ -1,4 +1,4 @@
-﻿const webApiBaseUrl = "http://localhost:8089/api/";
+﻿webApiBaseUrl = "http://localhost:8089/api/";
 
 function formatUser(item: User): string {
     return item.LastName + " " + item.FirstName + " - " + item.Username;

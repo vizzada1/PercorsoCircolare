@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using PercorsoCircolare.BL;
@@ -11,7 +12,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
     public class RoomController : ApiController
     {
         [HttpGet]
-        [Route("api/Rooms")]
+        [Route("api/Room")]
         public IEnumerable<RoomVM> GetAllRooms()
         {
             var mng = new RoomManager();
@@ -21,7 +22,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
         }
 
         [HttpGet]
-        [Route("api/Rooms/{id:int}")]
+        [Route("api/Room/{id:int}")]
         public IHttpActionResult GetRoom(int id)
         {
             var mng = new RoomManager();
@@ -33,11 +34,15 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
         }
 
         [HttpPost]
-        [Route("api/Rooms/add")]
+        [Route("api/Room/add")]
         public IHttpActionResult CreateRoom(RoomVM res)
         {
             var mng = new RoomManager();
-            mng.AddNewRoom(RoomMapper.MapRoomVM(res));
+            var mngBuilding = new BuildingManager();
+
+            var room = RoomMapper.MapRoomVM(res);
+            room.Building = mngBuilding.GetBuildingById(res.Building);
+            mng.AddNewRoom(room);
 
             return Ok(res);
         }

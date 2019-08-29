@@ -1,4 +1,4 @@
-﻿const webApiBaseUrl = "http://localhost:8089/api/";
+﻿webApiBaseUrl = "http://localhost:8089/api/";
 
 function formatBuilding(item: Building): string {
     return item.Name + " " + item.Address;
@@ -17,7 +17,7 @@ $(document).ready(() => {
 
 function buildingDetails(id: number): void {
     $.getJSON(webApiBaseUrl + "Building/" + id)
-        .done(((building: any) => {
+        .done(((building: Building) => {
             alert(building.Name + " " + building.Address + " " + building.IsActive);
         }) as any)
         .fail((jqXHR, textStatus, err) => {
@@ -50,7 +50,7 @@ function getAllBuildings(): void {
 function createBuilding(): void {
     let body = JSON.stringify({
         "Address": $("#address").val(),
-        "Name": $("#name").val(),
+        "Name": $("#buildingName").val(),
         "IsActive": $("#isActive").is(":checked")
     });
     console.log(body);

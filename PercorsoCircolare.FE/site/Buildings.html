@@ -30,13 +30,13 @@
                         <a class="nav-link" href="#">Prenotazioni</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/site/Buildings.html">Edifici</a>
+                        <a class="nav-link active" href="/site/Buildings.html">Edifici</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sale</a>
+                        <a class="nav-link" href="/site/Rooms.html">Sale</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/site/Resources.html">Utenti</a>
+                        <a class="nav-link" href="/site/Resources.html">Utenti</a>
                     </li>
                 </ul>
             </div>
@@ -57,9 +57,9 @@
 
         <!--<button id="createUser" type="button" class="btn btn-default" onclick="redirect('site/AddResource.html')">add user</button>-->
         <!--Trigger-->
-        <a class="create-trigger" href="#" data-target="#createBuilding" data-toggle="modal">Create</a>
+        <a class="create-trigger" href="#" data-target="#createRoom" data-toggle="modal">Create</a>
 
-        <div id="createBuilding" class="modal fade" role="dialog">
+        <div id="createRoom" class="modal fade" role="dialog">
             <div class="modal-dialog">
 
                 <div class="modal-content">
@@ -71,7 +71,7 @@
                             <input type="text" id="buildingName" name="buildingName" class="username form-control" placeholder="name" required />
                             <input type="checkbox" id="isActive" name="isActive" value="isActive" checked required />
                             <hr />
-                            <input class="btn create" id="btnCreateBuilding" type="button" value="Create" />
+                            <input class="btn create" id="btnCreate" type="button" value="Create" />
                         </form>
                     </div>
                 </div>
@@ -81,6 +81,6 @@
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../scripts/Classes.js"></script>
-    <script src="../scripts/buildings.js"></script>
+    <script src="../scripts/building.js"></script>
 </body>
 </html>

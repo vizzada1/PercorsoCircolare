@@ -19,7 +19,7 @@ class Room {
     Name: string;
     AvailableSeats: number;
     IsActive: boolean;
-    Building: Building;
+    Building: number;
 }
 
 class Booking {

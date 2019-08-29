@@ -11,7 +11,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
     public class BuildingController : ApiController
     {
         [HttpGet]
-        [Route("api/Buildings")]
+        [Route("api/Building")]
         public IEnumerable<BuildingVM> GetAllBuildings()
         {
             var mng = new BuildingManager();
@@ -21,7 +21,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
         }
 
         [HttpGet]
-        [Route("api/Buildings/{id:int}")]
+        [Route("api/Building/{id:int}")]
         public IHttpActionResult GetBuilding(int id)
         {
             var mng = new BuildingManager();
@@ -33,7 +33,7 @@ namespace PercorsoCircolare.PercorsoCircolare.SL.Api.Controllers
         }
 
         [HttpPost]
-        [Route("api/Buildings/add")]
+        [Route("api/Building/add")]
         public IHttpActionResult CreateBuilding(BuildingVM res)
         {
             var mng = new BuildingManager();
