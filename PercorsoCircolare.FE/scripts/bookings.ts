@@ -80,7 +80,7 @@ function formatBookingDetail(item: Booking, resourceName: string): string {
     let splittedEnd = item.DateEnd.toLocaleString().split("-");
     let hoursSplittedStart = item.DateStart.toLocaleString().split("T")[1].split(":");
     let hoursSplittedEnd = item.DateEnd.toLocaleString().split("T")[1].split(":");
-    return `Prenotazione in sala ${item.RoomId} prenotata dall'utente ${resourceName} il ${splittedStart[0]}/${splittedStart[1]}/${splittedStart[2].split("T")[0]} dalle ${hoursSplittedStart[0]}:${hoursSplittedStart[1]} fino al ${splittedEnd[0]}/${splittedEnd[1]}/${splittedEnd[2].split("T")[0]} alle ${hoursSplittedEnd[0]}:${hoursSplittedEnd[1]}, con prenotazione `;
+    return `Prenotazione in sala ${item.RoomId} prenotata dall'utente ${resourceName} il ${splittedStart[0]}/${splittedStart[1]}/${splittedStart[2].split("T")[0]} dalle ${hoursSplittedStart[0]}:${hoursSplittedStart[1]} fino al ${splittedEnd[0]}/${splittedEnd[1]}/${splittedEnd[2].split("T")[0]} alle ${hoursSplittedEnd[0]}:${hoursSplittedEnd[1]}, con nome prenotazione: ${item.Description}`;
 }
 
 function bookingDetails(id: number): void {
@@ -140,7 +140,7 @@ function deleteBooking(id: number): void {
 }
 
 function createBooking(): void {
-    if ($("#description").val() === "" || $("#datepickerStart").val() === "" || $("#datepickerEnd").val() === "" || $("#resourceSelect").children("option:selected").val() === "" || $("#roomSelect").children("option:selected").val()) {
+    if ($("#description").val() === "" || $("#datepickerStart").val() === "" || $("#datepickerEnd").val() === "" || $("#resourceSelect").children("option:selected").val() === "" || $("#roomSelect").children("option:selected").val() === "") {
         alert("You need to valorize every field");
         return;
     }
