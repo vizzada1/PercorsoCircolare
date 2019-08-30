@@ -68,7 +68,6 @@ function getAllRooms(): void {
         .done(((rooms: Room[]) => {
             $.each(rooms,
                 (_key, room: Room) => {
-                    console.debug(`<li class="list-group-item">${formatRoom(room)}<a style="margin-left:5px;" href="#" onclick="roomDetails(${room.RoomId})">(View)</a></li>`);
                     $("#list-of-rooms").append(`<li class="list-group-item">${formatRoom(room)}<a style="margin-left:5px;" href="#" onclick="roomDetails(${room.RoomId})">(View)</a></li>`);
                 });
         }) as any)
@@ -81,20 +80,23 @@ function getAllRooms(): void {
 }
 
 function createRoom(): void {
+    if ($("#roomName").val() === "" || $("#availableSeats").val() === "" || $("#lastName").val() || $("#roomSelect").children("option:selected").val() === "") {
+        alert("You need to valorize every field");
+        return;
+    }
+
     let body = JSON.stringify({
         "AvailableSeats": $("#availableSeats").val(),
         "Name": $("#roomName").val(),
         "IsActive": $("#isActive").is(":checked"),
         "BuildingId": $("#roomSelect").children("option:selected").val()
 });
-    console.log(body);
     $.ajax({
         type: "POST",
         url: webApiBaseUrl + "Room/add",
         contentType: "application/json",
         data: body
     }).done((data) => {
-        console.log(JSON.stringify(data));
         this.getAllRooms();
     }).fail((jqXHR, textStatus, err) => {
         console.error(`jqXHR: ${jqXHR}`);

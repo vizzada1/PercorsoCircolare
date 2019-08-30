@@ -9,7 +9,7 @@ $(document).ready(() => {
 
     $("#btnCreateBuilding").click(() => {
         this.createBuilding();
-        $("#name").val("");
+        $("#buildingName").val("");
         $("#address").val("");
         $("#createBuilding").modal("toggle");
     });
@@ -35,7 +35,6 @@ function getAllBuildings(): void {
         .done(((buildings: Building[]) => {
             $.each(buildings,
                 (_key, building: Building) => {
-                    console.debug(`<li class="list-group-item">${formatBuilding(building)}<a style="margin-left:5px;" href="#" onclick="buildingDetails(${building.BuildingId})">(View)</a></li>`);
                     $("#list-of-buildings").append(`<li class="list-group-item">${formatBuilding(building)}<a style="margin-left:5px;" href="#" onclick="buildingDetails(${building.BuildingId})">(View)</a></li>`);
                 });
         }) as any)
@@ -48,19 +47,22 @@ function getAllBuildings(): void {
 }
 
 function createBuilding(): void {
+    if ($("#address").val() === "" || $("#buildingName").val() === "") {
+        alert("You need to valorize every field");
+        return;
+    }
+
     let body = JSON.stringify({
         "Address": $("#address").val(),
         "Name": $("#buildingName").val(),
         "IsActive": $("#isActive").is(":checked")
     });
-    console.log(body);
     $.ajax({
         type: "POST",
         url: webApiBaseUrl + "Building/add",
         contentType: "application/json",
         data: body
     }).done((data) => {
-        console.log(JSON.stringify(data));
         this.getAllBuildings();
     }).fail((jqXHR, textStatus, err) => {
         console.error(`jqXHR: ${jqXHR}`);

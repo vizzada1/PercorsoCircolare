@@ -1,5 +1,7 @@
 ﻿webApiBaseUrl = "http://localhost:8089/api/";
 
+var userIdList:string[] = [];
+
 function formatUser(item: User): string {
     return item.LastName + " " + item.FirstName + " - " + item.Username;
 }
@@ -20,7 +22,7 @@ $(document).ready(() => {
 function userDetails(id: number): void {
     $.getJSON(webApiBaseUrl + "Resource/" + id)
         .done(((user: any) => {
-            alert(user.Username + " " + user.FirstName + " " + user.LastName + " " + user.EmailAddress + " " + user.IsActive);
+            alert(user.ResourceId + " " + user.Username + " " + user.FirstName + " " + user.LastName + " " + user.EmailAddress + " " + user.IsActive);
         }) as any)
         .fail((jqXHR, textStatus, err) => {
             console.error(`jqXHR: ${jqXHR}`);
@@ -37,7 +39,7 @@ function getAllUsers(): void {
         .done(((users: User[]) => {
             $.each(users,
                 (_key, user: User) => {
-                    console.debug(`<li class="list-group-item">${formatUser(user)}<a style="margin-left:5px;" href="#" onclick="userDetails(${user.ResourceId})">(View)</a></li>`);
+                    userIdList.push(user.ResourceId.toString());
                     $("#list-of-users").append(`<li class="list-group-item">${formatUser(user)}<a style="margin-left:5px;" href="#" onclick="userDetails(${user.ResourceId})">(View)</a></li>`);
                 });
         }) as any)
@@ -50,6 +52,16 @@ function getAllUsers(): void {
 }
 
 function createUser(): void {
+    if ($("#id").val() === "" || $("#firstName").val() === "" || $("#lastName").val() === "" || $("#emailAddress").val() === "") {
+        alert("You need to valorize every field");
+        return;
+    }
+
+    if (jQuery.inArray($("#id").val(), userIdList).valueOf() !== -1) {
+        alert(`A user with ${$("#id").val()} already exists`);
+        return;
+    }
+
     let body = JSON.stringify({
         "ResourceId": $("#id").val(),
         "FirstName": $("#firstName").val(),
@@ -57,14 +69,12 @@ function createUser(): void {
         "EmailAddress": $("#emailAddress").val(),
         "IsActive": $("#isActive").is(":checked")
     });
-    console.log(body);
     $.ajax({
         type: "POST",
         url: webApiBaseUrl + "Resource/add",
         contentType: "application/json",
         data: body
     }).done((data) => {
-        console.log(JSON.stringify(data));
         this.getAllUsers();
     }).fail((jqXHR, textStatus, err) => {
         console.error(`jqXHR: ${jqXHR}`);

@@ -140,6 +140,10 @@ function deleteBooking(id: number): void {
 }
 
 function createBooking(): void {
+    if ($("#description").val() === "" || $("#datepickerStart").val() === "" || $("#datepickerEnd").val() === "" || $("#resourceSelect").children("option:selected").val() === "" || $("#roomSelect").children("option:selected").val()) {
+        alert("You need to valorize every field");
+        return;
+    }
 
     let body = JSON.stringify({
         "Description": $("#description").val(),

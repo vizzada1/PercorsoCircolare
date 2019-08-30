@@ -18,6 +18,7 @@ namespace PercorsoCircolare.BL
         {
             try
             {
+                LogManager.Info("get all buildings");
                 return repo.GetAll();
             }
             catch (Exception ex)

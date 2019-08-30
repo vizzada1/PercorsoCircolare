@@ -49,7 +49,7 @@ h4 {
     font-weight: bold;
     color: #fff;
 }
-#btnCreate, #btnCreateRoom, #btnCreateBooking {
+#btnCreate, #btnCreateRoom, #btnCreateBooking, #btnCreateBuilding {
     padding: 6px 20px;
     border-radius: 20px;
     background: none;
@@ -59,9 +59,8 @@ h4 {
     transition: all .5s;
     margin-top: 1em;
     text-align: center;
-
 }
-    #btnCreate:hover, #btnCreateRoom:hover, #btnCreateBooking:hover {
+    #btnCreate:hover, #btnCreateRoom:hover, #btnCreateBooking:hover, #btnCreateBuilding:hover {
         background: #FAB87F;
         color: #fff;
     }
