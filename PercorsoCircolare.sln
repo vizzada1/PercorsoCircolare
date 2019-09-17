@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PercorsoCircolare.PercorsoC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClientSample", "HttpClientSample\HttpClientSample.csproj", "{B8A1D44F-3532-46EB-A932-3B3CE179CE64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PercorsoCircolare.DAL_DBFirst", "PercorsoCircolare.DAL_DBFirst\PercorsoCircolare.DAL_DBFirst.csproj", "{46A3DEDE-BE5F-42D4-A1EA-A9DB59523314}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{B8A1D44F-3532-46EB-A932-3B3CE179CE64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8A1D44F-3532-46EB-A932-3B3CE179CE64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8A1D44F-3532-46EB-A932-3B3CE179CE64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46A3DEDE-BE5F-42D4-A1EA-A9DB59523314}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46A3DEDE-BE5F-42D4-A1EA-A9DB59523314}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46A3DEDE-BE5F-42D4-A1EA-A9DB59523314}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46A3DEDE-BE5F-42D4-A1EA-A9DB59523314}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
