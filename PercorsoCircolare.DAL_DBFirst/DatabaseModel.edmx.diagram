@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cecdf63921274a4bb9db596805514fa7" Name="Diagram1">
+        <EntityTypeShape EntityType="PercorsoCircolareDBFirstModel.Booking" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PercorsoCircolareDBFirstModel.Building" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PercorsoCircolareDBFirstModel.Resource" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PercorsoCircolareDBFirstModel.Room" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="PercorsoCircolareDBFirstModel.FK_dbo_Bookings_dbo_Resources_Resource_ResourceId" ManuallyRouted="false" />
+        <AssociationConnector Association="PercorsoCircolareDBFirstModel.FK_dbo_Bookings_dbo_Rooms_RoomId" ManuallyRouted="false" />
+        <AssociationConnector Association="PercorsoCircolareDBFirstModel.FK_dbo_Rooms_dbo_Buildings_Building_BuildingId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
